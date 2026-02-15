@@ -1,0 +1,98 @@
+'use client'
+import React from 'react'
+import { useParams, useRouter } from 'next/navigation'
+
+export default function DetailMateriPage() {
+  const params = useParams()
+  const router = useRouter()
+  const { id } = params
+
+  const kontenMateri = {
+    "1": {
+      judul: "Dasar-Dasar PLC & Hardware",
+      videoUrl: "https://drive.google.com/file/d/1xlvs64YegqgdMahvE9LJz0dZdLC7wJYy/preview",
+      deskripsi:
+        "PLC (Programmable Logic Controller) adalah komputer elektronik yang dirancang khusus untuk bekerja di lingkungan industri. Pada modul ini, kita mempelajari komponen utama seperti CPU, Memory, Power Supply, serta modul Input dan Output.",
+      poin: [
+        "Pengenalan Hardware PLC",
+        "Cara Kerja Scan Cycle",
+        "Jenis-jenis Input/Output"
+      ]
+    },
+    "2": {
+      judul: "Pemrograman Ladder Diagram",
+      videoUrl: "https://www.youtube.com/embed/7z0VYpRjTgE",
+      deskripsi:
+        "Ladder Diagram (LD) adalah bahasa pemrograman PLC yang menyerupai rangkaian listrik berbasis relay. Modul ini membahas konsep dasar hingga implementasi logika kontrol sederhana.",
+      poin: [
+        "Kontak Normally Open (NO)",
+        "Kontak Normally Closed (NC)",
+        "Output Coil dan Latching"
+      ]
+    }
+  }
+
+  const materi =
+    kontenMateri[id] || {
+      judul: "Materi Belum Tersedia",
+      deskripsi: "Konten untuk materi ini sedang dalam tahap penyusunan.",
+      poin: []
+    }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-16 px-6">
+      <div className="max-w-4xl mx-auto bg-white p-10 rounded-3xl shadow-lg">
+
+        {/* Back Button */}
+        <button
+          onClick={() => router.push('/dashboard')}
+          className="mb-10 text-blue-600 font-semibold hover:text-blue-800 transition flex items-center gap-2"
+        >
+          ← Kembali ke Dashboard
+        </button>
+
+        {/* Judul */}
+        <h1 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-6 leading-tight">
+          {materi.judul}
+        </h1>
+
+        {/* Deskripsi */}
+        <p className="text-gray-600 leading-relaxed mb-8 text-lg">
+          {materi.deskripsi}
+        </p>
+
+        {/* Poin Materi */}
+        {materi.poin.length > 0 && (
+          <div className="mb-10">
+            <h2 className="text-xl font-bold text-gray-800 mb-4">
+              Poin Pembahasan:
+            </h2>
+            <ul className="space-y-3">
+              {materi.poin.map((item, index) => (
+                <li
+                  key={index}
+                  className="bg-blue-50 border border-blue-100 px-4 py-3 rounded-lg text-gray-700"
+                >
+                  • {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Video Section */}
+        {materi.videoUrl && (
+          <div className="aspect-video rounded-2xl overflow-hidden shadow-md">
+            <iframe
+              src={materi.videoUrl}
+              title="Video Pembelajaran"
+              className="w-full h-full"
+              allowFullScreen
+            />
+          </div>
+        )}
+
+      </div>
+    </div>
+  )
+}
