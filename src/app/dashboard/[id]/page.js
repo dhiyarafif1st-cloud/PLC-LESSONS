@@ -1,11 +1,40 @@
 'use client'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
+// ... (import supabase di bagian atas file)
+ import { createClient } from '../../utils/supabase'
 
 export default function DetailMateriPage() {
   const params = useParams()
   const router = useRouter()
   const { id } = params
+
+  // Inisialisasi client Supabase di dalam komponen
+  const supabase = createClient() 
+
+  const [komentar, setKomentar] = useState([]);
+  const [nama, setNama] = useState("");
+  const [inputKomentar, setInputKomentar] = useState("");
+
+// Fungsi untuk ambil data
+async function fetchKomentar() {
+  const { data } = await supabase
+    .from('komentar')
+    .select('*')
+    .eq('materi_id', id)
+    .order('created_at', { ascending: false });
+  setKomentar(data || []);
+}
+
+// Fungsi untuk kirim data
+async function kirimKomentar() {
+  await supabase.from('komentar').insert([
+    { materi_id: id, nama: nama, isi_komentar: inputKomentar }
+  ]);
+  setInputKomentar(""); // reset input
+  fetchKomentar(); // refresh daftar
+}
+
 
   const kontenMateri = {
     "1": {
@@ -105,8 +134,40 @@ export default function DetailMateriPage() {
             />
           </div>
         )}
+        <hr className="my-10" />
+
+        {/* --- Tampilan Komentar --- */}
+        <div className="mt-10">
+          <h2 className="text-2xl font-bold mb-6">Diskusi Materi</h2>
+          
+          <form onSubmit={kirimKomentar} className="space-y-4 mb-10">
+            <input 
+              type="text" placeholder="Nama Anda" value={nama}
+              onChange={(e) => setNama(e.target.value)}
+              className="w-full p-3 border rounded-xl outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <textarea 
+              placeholder="Tulis diskusi..." value={inputKomentar}
+              onChange={(e) => setInputKomentar(e.target.value)}
+              className="w-full p-3 border rounded-xl h-24 outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <button className="bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700">Kirim</button>
+          </form>
+
+          <div className="space-y-4">
+            {komentar.map((k) => (
+              <div key={k.id} className="bg-gray-50 p-4 rounded-xl border">
+                <p className="font-bold text-blue-600">{k.nama}</p>
+                <p className="text-gray-700">{k.isi_komentar}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
       </div>
-    </div>
+
+      </div>
+    
+    
   )
 }
