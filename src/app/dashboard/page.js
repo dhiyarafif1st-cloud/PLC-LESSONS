@@ -42,8 +42,8 @@ export default function DashboardPage() {
     },
     {
       id: 2,
-      title: "Ladder Logic",
-      desc: "Pemrograman diagram tangga sesuai standar industri.",
+      title: "programming language",
+      desc: "Pemrograman sesuai standar industri.",
       color: "border-green-500"
     },
     {
@@ -51,6 +51,12 @@ export default function DashboardPage() {
       title: "SCADA & HMI",
       desc: "Monitoring dan kontrol visual berbasis HMI & SCADA.",
       color: "border-purple-500"
+    },
+    {
+      id: 4,
+      title: "EcoStruxure Machine Expert Basic X factory I/O",
+      desc: "Simulasi seperti real di industri.",
+      color: "border-yellow-500"
     },
   ]
 
@@ -87,22 +93,6 @@ export default function DashboardPage() {
           <p className="text-slate-500 text-sm">
             Kelola dan lanjutkan perjalanan belajar sistem kontrol industri.
           </p>
-        </div>
-
-        {/* STATISTIK */}
-        <div className="grid grid-cols-3 gap-4 mb-8">
-          <div className="bg-white rounded-xl p-4 shadow-sm border">
-            <p className="text-xs text-slate-500">Total Modul</p>
-            {/* <h3 className="text-2xl font-bold text-blue-600">3</h3> */}
-          </div>
-          <div className="bg-white rounded-xl p-4 shadow-sm border">
-            <p className="text-xs text-slate-500">Progress</p>
-            {/* <h3 className="text-2xl font-bold text-green-600">35%</h3> */}
-          </div>
-          <div className="bg-white rounded-xl p-4 shadow-sm border">
-            <p className="text-xs text-slate-500">Level</p>
-            {/* <h3 className="text-2xl font-bold text-purple-600">Beginner</h3> */}
-          </div>
         </div>
 
         {/* GRID MODULE */}

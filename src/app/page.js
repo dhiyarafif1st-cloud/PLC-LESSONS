@@ -10,10 +10,10 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto">
           <h1
             className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
-            Belajar PLC Automation
+            Belajar Programmable Logic Controller
           </h1>
-          <p className="text-lg md:text-xl text-blue-100 mb-10">
-            Kuasai Ladder Logic, HMI, dan konsep Industri 4.0 dari dasar hingga mahir.
+          <p className="text-lg md:text-xl text-blue-100 mb-10"> 
+           Kuasai PLC, HMI, dari konsep dasar.
           </p>
           <Link href="/login">
           <button className="bg-yellow-400 text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 transition duration-300 shadow-lg hover:shadow-xl">
@@ -59,10 +59,10 @@ export default function HomePage() {
           {/* Card 2 */}
           <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300 border-t-4 border-green-600">
             <h3 className="text-xl font-bold mb-3 text-gray-800">
-              Ladder Logic
+              Programming Language
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              Mempelajari pemrograman diagram tangga sesuai standar industri
+              Mempelajari pemrograman PLC sesuai standar industri
               untuk sistem kontrol otomatis.
             </p>
           </div>

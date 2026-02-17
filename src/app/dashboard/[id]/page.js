@@ -10,26 +10,40 @@ export default function DetailMateriPage() {
   const kontenMateri = {
     "1": {
       judul: "Dasar-Dasar PLC & Hardware",
-      videoUrl: "https://drive.google.com/file/d/1xlvs64YegqgdMahvE9LJz0dZdLC7wJYy/preview",
+      videoUrl: "https://drive.google.com/file/d/1clSYmvUiIs4kmondwKyMbfwdaZmmUz7x/preview",
       deskripsi:
-        "PLC (Programmable Logic Controller) adalah komputer elektronik yang dirancang khusus untuk bekerja di lingkungan industri. Pada modul ini, kita mempelajari komponen utama seperti CPU, Memory, Power Supply, serta modul Input dan Output.",
+        "PLC (Programmable Logic Controller) adalah komputer elektronik yang dirancang khusus untuk bekerja di lingkungan industri. Pada modul ini, kita mempelajari PLC, pengenalan Softwere, serta modul Input dan Output.",
       poin: [
-        "Pengenalan Hardware PLC",
-        "Cara Kerja Scan Cycle",
-        "Jenis-jenis Input/Output"
+        "Pengenalan PLC",
+        "Cara Kerja PLC",
+        "Input/Output",
+        "Pengenalan PLC Softwere"
       ]
     },
-    "2": {
-      judul: "Pemrograman Ladder Diagram",
-      videoUrl: "https://www.youtube.com/embed/7z0VYpRjTgE",
-      deskripsi:
-        "Ladder Diagram (LD) adalah bahasa pemrograman PLC yang menyerupai rangkaian listrik berbasis relay. Modul ini membahas konsep dasar hingga implementasi logika kontrol sederhana.",
-      poin: [
-        "Kontak Normally Open (NO)",
-        "Kontak Normally Closed (NC)",
-        "Output Coil dan Latching"
-      ]
-    }
+    // "2": {
+    //   judul: "Pemrograman Ladder Diagram",
+    //   videoUrl: "https://www.youtube.com/embed/7z0VYpRjTgE",
+    //   deskripsi:
+    //     "Ladder Diagram (LD) adalah bahasa pemrograman PLC yang menyerupai rangkaian listrik berbasis relay. Modul ini membahas konsep dasar hingga implementasi logika kontrol sederhana.",
+    //   poin: [
+    //     "Kontak Normally Open (NO)",
+    //     "Kontak Normally Closed (NC)",
+    //     "Output Coil dan Latching"
+    //   ]
+      
+    // },
+    // "3": {
+    //   judul: "Sistem SCADA & HMI",
+    //   videoUrl: "", // Ganti dengan URL video kamu
+    //   deskripsi:
+    //     "SCADA dan HMI digunakan untuk memonitor dan mengontrol proses industri secara visual. Modul ini menjelaskan cara menghubungkan interface grafis dengan kontroler PLC.",
+    //   poin: [
+    //     "Pengenalan Human Machine Interface",
+    //     "Komunikasi Data PLC ke SCADA",
+    //     "Desain Dashboard Monitoring"
+    //   ]
+    // },
+    
   }
 
   const materi =
