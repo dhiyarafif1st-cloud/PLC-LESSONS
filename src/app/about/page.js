@@ -7,7 +7,7 @@ export default function AboutPage() {
           Saya Mr.Eng Saya adalah pengembang di balik WEB PLC-Lesson ini. 
           Visi saya adalah memudahkan rekan-rekan untuk belajar otomatisasi dengan cara yang lebih modern.
           WEB ini masih tahap pengembangan dan untuk materi akan terus bertambah sesuai pengetahuan pengembang wkwkw.
-          jadi MOHON BERSABAR hehehe 
+          jadi MOHON BERSABAR hehehe, contact: mr.eng.suiiii@gmail.com 
         </p>
       </div>
     </div>
