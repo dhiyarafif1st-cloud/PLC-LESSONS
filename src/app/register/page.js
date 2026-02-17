@@ -24,7 +24,7 @@ export default function RegisterPage() {
     if (error) {
       setMessage(error.message)
     } else {
-      setMessage('Registrasi berhasil! Silakan cek email untuk verifikasi.')
+      setMessage('Registrasi berhasil! Silakan cek email untuk verifikasi, tidakusah verivikasi lagi dimatikan.')
       setEmail('')
       setPassword('')
     }

@@ -138,7 +138,7 @@ async function kirimKomentar() {
 
         {/* --- Tampilan Komentar --- */}
         <div className="mt-10">
-          <h2 className="text-2xl font-bold mb-6">Diskusi Materi</h2>
+          <h2 className="text-2xl font-bold mb-6">Tempat Bacot</h2>
           
           <form onSubmit={kirimKomentar} className="space-y-4 mb-10">
             <input 
@@ -151,7 +151,7 @@ async function kirimKomentar() {
               onChange={(e) => setInputKomentar(e.target.value)}
               className="w-full p-3 border rounded-xl h-24 outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700">Kirim</button>
+            <button className="bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700">Jangan Kirim</button>
           </form>
 
           <div className="space-y-4">
